@@ -55,6 +55,7 @@ if (isset($_POST['btnEdit'])) {
 
         if($status == 1 && !empty($referred_by) && $refer_bonus_sent != 1){
             $refer_bonus_codes = $function->getSettingsVal('refer_bonus_codes');
+            
             $code_bonus = $refer_bonus_codes * COST_PER_CODE;
             $referral_bonus = 250;
             $sql_query = "SELECT *,datediff('$date', joined_date) AS history_days FROM users WHERE refer_code =  '$referred_by'";
